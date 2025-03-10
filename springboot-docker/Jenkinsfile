@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/20bcs2157/jenkins-pipline.git'
+                git 'https://github.com/20bcs2157/jenkins-pipline/tree/master/springboot-docker.git'
             }
         }
         stage('Build') {
