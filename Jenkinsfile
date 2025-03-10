@@ -14,5 +14,11 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+         stage('Build') {
+            steps {
+                dir('springboot-docker') {  // Change 'your-project-folder' to the correct directory containing pom.xml
+                    bat 'mvn clean install'
+                }
+            }
     }
 }
