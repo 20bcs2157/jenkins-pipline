@@ -15,6 +15,15 @@ pipeline {
                     bat 'mvn clean install'
                 }
             }
+       stage('Deploy') {
+    steps {
+        echo "Deploying application..."
+        bat '''
+            docker build -t myapp:latest .
+            docker run -d -p 8080:8080 myapp:latest
+        '''
+    }
+}
         }
     }
 }
